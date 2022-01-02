@@ -1,0 +1,18 @@
+name: ectomigo github test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: checkout
+      - uses: jwalton/gh-find-current-pr@v1
+        id: findPr
+      - uses: ectomigo/ectomigo@v0.1.0
+        name: test
+        if: success() && steps.findPr.outputs.number
+        with:
+          migration_paths: migrations/**/*
+          patterns: '{"massive": ["javascript/**/*.js"], "pojo": ["java/**/*.java"]}'
+          pull_request: ${{ steps.findPr.outputs.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
