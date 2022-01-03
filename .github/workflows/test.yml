@@ -8,9 +8,8 @@ jobs:
         name: checkout
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
-      - uses: ectomigo/ectomigo@v0.1.0
+      - uses: ectomigo/ectomigo@v0.1.2
         name: test
-        if: success() && steps.findPr.outputs.number
         with:
           migration_paths: migrations/**/*
           patterns: '{"massive": ["javascript/**/*.js"], "pojo": ["java/**/*.java"]}'
