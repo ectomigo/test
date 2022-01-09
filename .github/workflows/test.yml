@@ -9,6 +9,7 @@ jobs:
       - uses: ectomigo/ectomigo@v0.1.5
         name: test
         with:
+          main_branches: 'main,main-two'
           migration_paths: migrations/**/*
           patterns: '{"massive": ["javascript/**/*.js"], "pojo": ["java/**/*.java"]}'
           token: ${{ secrets.GITHUB_TOKEN }}
