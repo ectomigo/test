@@ -8,7 +8,7 @@ jobs:
         name: checkout
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
-      - uses: ectomigo/ectomigo@v0.1.2
+      - uses: ectomigo/ectomigo@v0.1.4
         name: test
         with:
           migration_paths: migrations/**/*
