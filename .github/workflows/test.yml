@@ -6,12 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
-      - uses: jwalton/gh-find-current-pr@v1
-        id: findPr
-      - uses: ectomigo/ectomigo@v0.1.4
+      - uses: ectomigo/ectomigo@v0.1.5
         name: test
         with:
           migration_paths: migrations/**/*
           patterns: '{"massive": ["javascript/**/*.js"], "pojo": ["java/**/*.java"]}'
-          pull_request: ${{ steps.findPr.outputs.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
