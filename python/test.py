@@ -11,3 +11,4 @@ CROSS JOIN two AS t
 
 def a_method(val):
     run_query("INSERT INTO one (val) VALUES (%s)", val)
+    run_query(f"INSERT INTO two (val) VALUES ({val})")

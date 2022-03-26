@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
-      - uses: ectomigo/ectomigo@v0.1.5
+      - uses: ectomigo/ectomigo@v0.1.6
         name: test
         with:
           migration_paths: migrations/**/*
