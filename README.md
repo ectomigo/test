@@ -1,0 +1,1 @@
+This is a testing/example repository demonstrating ectomigo configuration. Check out the [pull request](https://github.com/ectomigo/test/pull/1/files) from the `migrate` branch to see ectomigo leaving comments.
